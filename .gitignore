@@ -216,3 +216,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Project-specific (quant-lab)
+**/__pycache__/
+*.pyc
+data/*.duckdb
+*.duckdb
+*.parquet
+reports/
+.DS_Store

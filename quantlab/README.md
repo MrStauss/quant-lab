@@ -220,4 +220,6 @@ Key safety features:
 
 ## License
 
-MIT
+Copyright (c) 2026 MrStauss. All rights reserved. See the top-level README.
+
+_Research only, not financial advice._

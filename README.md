@@ -1,8 +1,10 @@
-# QuantLab-V1.0
+# quant-lab
 
-QuantLab is a quantitative trading research platform for asset-family-based strategy development, backtesting, and paper trading. It provides a modular pipeline from data ingestion to portfolio allocation, with built-in risk management and comprehensive reporting.
+> Modular quantitative trading research platform: HMM regime detection, walk-forward backtesting, risk management and paper trading for asset-family ETF strategies.
 
-**Version:** 1.0.0
+## Overview
+
+quant-lab (formerly `QuantLab-V1.0`) is a research platform for asset-family-based strategy development. It provides a modular pipeline from data ingestion (Yahoo Finance) through features, strategies, signals and risk guardrails to portfolio allocation, paper execution and daily reporting. Versions are tracked with tags/releases rather than in the repository name; the current version is **1.0.0**.
 
 ## Features
 
@@ -14,22 +16,22 @@ QuantLab is a quantitative trading research platform for asset-family-based stra
 - **Daily Reporting**: HTML and Markdown report generation
 - **Jupyter Dashboard**: Interactive notebook for market visualization
 
-## Installation
+## Quickstart
 
 ```bash
 # Clone the repository
-git clone <repo-url>
-cd quantlab
+git clone https://github.com/MrStauss/quant-lab.git
+cd quant-lab
 
 # Create a virtual environment (recommended)
 python -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 
 # Install dependencies
-pip install -r requirements.txt
+pip install -r quantlab/requirements.txt
 ```
 
-## Dependencies
+### Dependencies
 
 - Python >= 3.10
 - yfinance >= 0.2.0
@@ -44,7 +46,7 @@ pip install -r requirements.txt
 - pyarrow >= 12.0.0
 - jinja2 >= 3.1.0
 
-## Usage
+### Usage
 
 ### CLI Commands
 
@@ -81,7 +83,7 @@ python -m quantlab.main backtest --rebalance-freq D
 
 ```bash
 # Start Jupyter
-cd notebooks
+cd quantlab/notebooks
 jupyter notebook dashboard.ipynb
 ```
 
@@ -113,7 +115,7 @@ print(f"Approved: {summary['n_approved']}")
 print(f"Allocation: {summary['allocation']}")
 ```
 
-## Architecture
+## Project structure
 
 ```
 quantlab/
@@ -206,9 +208,24 @@ quantlab/
 | Energy | ERX | XLE | ERY | GLD | BIL |
 | Financials | FAS | XLF | FAZ | GLD | BIL |
 
-## Safety Warning
+## Results / Screenshots
 
-**QuantLab V1.0 operates in paper mode only.** No live broker connections are supported. The platform is designed for research and educational purposes. Always consult a qualified financial advisor before making investment decisions.
+Backtest equity curves, drawdown charts and daily HTML reports are produced locally by `python -m quantlab.main backtest` / `report` and the Jupyter dashboard. No results are committed to this repository.
+
+## Roadmap
+
+- Scheduled daemon mode (V1.0 runs the daily pipeline once)
+- Transaction cost and slippage model refinements
+- More asset families and strategy ensembles
+- Tagged releases for each version
+
+## Disclaimer
+
+**Research and educational use only. Not financial advice.** Nothing in this repository is a recommendation to buy or sell any security. Backtested and paper-trading results are hypothetical and do not guarantee future performance. Leveraged and inverse ETFs carry substantial risk. Always do your own research and consult a qualified financial advisor before making investment decisions.
+
+### Safety features
+
+**quant-lab (v1.0) operates in paper mode only.** No live broker connections are supported. The platform is designed for research and educational purposes. Always consult a qualified financial advisor before making investment decisions.
 
 Key safety features:
 - Paper mode is the default and only execution mode
@@ -220,4 +237,4 @@ Key safety features:
 
 ## License
 
-MIT
+Copyright (c) 2026 MrStauss. **All rights reserved.** No license is granted to copy, modify or redistribute this code. You are welcome to read it for reference.
